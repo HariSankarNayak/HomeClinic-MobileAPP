@@ -1,0 +1,36 @@
+ion-card {
+  padding: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  border-radius: 8px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  background: white;
+}
+
+.indicator-container {
+  padding-left: 0.5rem;
+  padding-bottom: 0.4rem;
+}
+
+.event-indicator {
+  background: var(--ion-color-success);
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  display: table-cell;
+}
+
+:host ::ng-deep {
+  .monthview-primary-with-event {
+    background-color: white !important;
+  }
+
+  .monthview-selected {
+    background-color: var(--ion-color-success) !important;
+  }
+}
+
+.with-event {
+  background-color: var(--ion-color-primary);
+  border-radius: 15px;
+}

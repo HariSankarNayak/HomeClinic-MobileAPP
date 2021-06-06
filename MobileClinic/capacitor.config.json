@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "MobileClinic",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

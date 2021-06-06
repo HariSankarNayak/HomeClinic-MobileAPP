@@ -1,0 +1,121 @@
+<ion-content class="master-bg">
+  <div class="ion-padding section-title">
+    <ion-text>
+      <h1>Register Now!</h1>
+      <div>Sign Up Now to Start Business</div>
+    </ion-text>
+  </div>
+
+  <form class="ion-padding">
+    <ion-item>
+      <ion-input
+        type="text"
+        name="firstname"
+        value=""
+        placeholder="First Name"
+        [(ngModel)]="formData.firstname"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="text"
+        name="lastname"
+        value=""
+        placeholder="Last Name/ Surname"
+        [(ngModel)]="formData.lastname"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="email"
+        name="email"
+        value=""
+        placeholder="Email"
+        [(ngModel)]="formData.email"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="text"
+        name="contact"
+        value=""
+        placeholder="Contact"
+        [(ngModel)]="formData.contact"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Speciality</ion-label>
+      <ion-select  name="speciality"   [(ngModel)]="formData.speciality">
+        <ion-select-option
+          *ngFor="let speciality of specialities"
+          [value]="speciality.speciality_id"
+        >
+          {{speciality.speciality_name}}
+
+          <img src="{{iconLink}}{{speciality.speciality_icon}}" />
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        type="text"
+        name="year"
+        value=""
+        placeholder="Year"
+        [(ngModel)]="formData.year"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-list class="ion-no-margin ion-no-padding">
+      <ion-list-header class="ion-no-margin ion-no-padding" color="light">
+        <ion-label>Gender</ion-label>
+      </ion-list-header>
+      <ion-radio-group  class="ion-padding" name="gender"   [(ngModel)]="formData.gender" >
+        <ion-label class="ion-padding" color="dark">Male</ion-label>
+        <ion-radio slot="start"   value="male"></ion-radio>
+
+        <ion-label class="ion-padding" color="dark">Female</ion-label>
+        <ion-radio  slot="start" value="female"></ion-radio>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-item>
+      <ion-input
+        type="password"
+        name="password"
+        value=""
+        placeholder="Password"
+        [(ngModel)]="formData.password"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="password"
+        name="confirm_password"
+        value=""
+        placeholder="Confirm Password"
+        [(ngModel)]="formData.confirm_password"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <div class="ion-margin-top">
+      <ion-button (click)="registerUser()" expand="block" color="warning"
+        >Register</ion-button
+      >
+      <ion-text routerLink="/provider-login" class="ion-text-center">
+        <p>Already have an Account</p>
+      </ion-text>
+    </div>
+  </form>
+</ion-content>

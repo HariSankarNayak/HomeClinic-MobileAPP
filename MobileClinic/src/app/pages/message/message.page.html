@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Messages</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="Refreshing...">
+      </ion-refresher-content>
+    </ion-refresher>
+
+
+  <div class="ion-padding-horizontal" *ngIf="empty == 1"><h5>No Notification</h5></div>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-label class="ion-text-wrap">
+        <ion-text color="primary">
+          <h3>{{item.ann_title}}</h3>
+        </ion-text>
+        <p>{{item.ann_content}}</p>
+        <ion-text color="medium">
+          <p>{{item.date_created}} by {{item.clinic_name}}</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
